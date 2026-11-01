@@ -1,0 +1,14 @@
+schema = 1
+id = "notion"
+name = "Notion Kanban"
+version = "0.3.0"
+description = "Your Notion kanban board in a pane."
+icon = "kanban"
+host = "host.luau"
+window = "window.luau"
+styles = ["notion.css"]
+
+[[blocks]]
+id = "board"
+title = "Notion Kanban"
+icon = "kanban"

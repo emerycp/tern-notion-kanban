@@ -1,0 +1,117 @@
+/* The selected card: an accent ring drawn inside the card (an outer ring
+   clips against the pane's and the column strip's edges) and a faint fill.
+   A carried card (picked up to move) takes the warning tone. */
+[data-surface='plugin.notion.board'] .sf-card[data-role='notion.card'] {
+	transition: box-shadow 0.12s, background-color 0.12s;
+}
+
+[data-surface='plugin.notion.board'] .sf-card[data-role='notion.card'][data-tone='accent'],
+[data-surface='plugin.notion.board'] .sf-card[data-role='notion.card'][data-tone='warning'] {
+	box-shadow: inset 0 0 0 2px var(--tc);
+	background: rgb(from var(--tc) r g b / 12%);
+}
+
+[data-surface='plugin.notion.board'] .sf-card[data-role='notion.card'][data-tone='warning'] {
+	box-shadow: inset 0 0 0 2px var(--tc), 0 6px 18px rgb(0 0 0 / 22%);
+}
+
+/* No scrollbar: the plugin shows only the cards that fit, with "N more" lines
+   for the rest, and anything its estimate gets wrong is clipped, not scrolled. */
+.sf-main[data-surface='plugin.notion.board'] {
+	overflow: hidden;
+	padding-right: 8px;
+	box-sizing: border-box;
+}
+
+/* Cards: a little tighter than Tern's default, so more of a column shows, but
+   with room to read the title, the parent and the people apart. */
+[data-surface='plugin.notion.board'] .sf-card[data-role='notion.card'] {
+	border-radius: 10px;
+}
+
+[data-surface='plugin.notion.board'] .sf-card[data-role='notion.card'] .sf-card-body {
+	padding: 9px 12px;
+	gap: 4px;
+	line-height: 1.35;
+}
+
+/* Carrying a card: a column that can take it gets a quiet dashed outline; the
+   chosen one is filled. The padding and equal negative margin keep every column
+   exactly where it was. */
+[data-surface='plugin.notion.board'] .sf-col[data-role='notion.zone'],
+[data-surface='plugin.notion.board'] .sf-col[data-role='notion.target'] {
+	box-sizing: border-box;
+	padding: 6px;
+	margin: -6px;
+	border-radius: 14px;
+	outline: 1.5px dashed rgb(from var(--l3) r g b / 55%);
+	outline-offset: -1.5px;
+	transition: outline-color 0.12s, background-color 0.12s;
+}
+
+[data-surface='plugin.notion.board'] .sf-col[data-role='notion.target'] {
+	outline-color: var(--sf-accent, var(--accent));
+	background: rgb(from var(--sf-accent, var(--accent)) r g b / 8%);
+}
+
+/* The list of boards to pick from: a row each, the chosen one tinted. */
+[data-surface='plugin.notion.board'] .sf-row[data-role='notion.board'] {
+	padding: 5px 8px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+[data-surface='plugin.notion.board'] .sf-row[data-role='notion.board']:hover {
+	background: var(--l1);
+}
+
+[data-surface='plugin.notion.board'] .sf-row[data-role='notion.board'][data-tone='accent'] {
+	background: rgb(from var(--tc) r g b / 12%);
+	box-shadow: inset 2px 0 0 var(--tc);
+}
+
+/* Logos are shrunk from large pictures: filter smoothly, never crop. */
+[data-surface='plugin.notion.board'] .sf-image[data-role='notion.logo'] {
+	object-fit: contain;
+	image-rendering: smooth;
+	box-shadow: none;
+	border-radius: 4px;
+}
+
+/* Logos, emoji and default glyphs are drawn at one size, so a row of them lines up. */
+[data-surface='plugin.notion.board'] .sf-icon[data-role='notion.glyph-16'],
+[data-surface='plugin.notion.board'] .sf-icon[data-role='notion.glyph-16'] .ico {
+	width: 16px;
+	height: 16px;
+}
+
+[data-surface='plugin.notion.board'] [data-role='notion.emoji-16'] {
+	font-size: 13px;
+	line-height: 16px;
+	height: 16px;
+}
+
+[data-surface='plugin.notion.board'] .sf-icon[data-role='notion.glyph-20'],
+[data-surface='plugin.notion.board'] .sf-icon[data-role='notion.glyph-20'] .ico {
+	width: 20px;
+	height: 20px;
+}
+
+[data-surface='plugin.notion.board'] [data-role='notion.emoji-20'] {
+	font-size: 17px;
+	line-height: 20px;
+	height: 20px;
+}
+
+[data-surface='plugin.notion.board'] .sf-icon[data-role='notion.glyph-24'],
+[data-surface='plugin.notion.board'] .sf-icon[data-role='notion.glyph-24'] .ico {
+	width: 24px;
+	height: 24px;
+}
+
+[data-surface='plugin.notion.board'] [data-role='notion.emoji-24'] {
+	font-size: 20px;
+	line-height: 24px;
+	height: 24px;
+}
+
