@@ -24,7 +24,7 @@ A [Tern](https://docs.stencil.so/tern/) plugin that shows a Notion board view as
 | `←→` `↑↓` (or `hjkl`), `g` / `G` | Move between columns and cards |
 | `Enter` / `Esc` | Open / close the card's panel |
 | `o`, `b` | Open the card, the board, in the browser |
-| `H` / `L` | Move the card to the previous / next column |
+| Right-click a card | **Move to** another column, pick it up, open its details or open it in the browser |
 | `Space` | Pick the card up, `←→` to choose a column, `Enter` or click to drop, `Esc` to cancel |
 | `n` | New card: title, status, sprint (defaults to the current one), parent, assignee. `Tab` between fields, `←→` to change one |
 | `v` / `V` | Next / previous board view |
